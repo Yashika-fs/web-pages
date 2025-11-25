@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cute Love Pages</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: url('https://i.postimg.cc/6pQb7gn9/canva_pink_watercolor_playful_floral_abstract_ribbon_bows_girly_phone_wallpaper_Al4e_XCEBWQE.jpg') no-repeat center/cover;
+        font-family: 'Poppins', sans-serif;
+        overflow: hidden;
+    }
+
+    .page {
+        width: 100%;
+        height: 100vh;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px;
+        transition: opacity 0.5s ease;
+    }
+
+    .active { display: flex; }
+
+    .box, .sticker-box {
+        background: rgba(255, 255, 255, 0.6);
+        padding: 20px;
+        border-radius: 25px;
+        width: 80%;
+        text-align: center;
+        box-shadow: 0 0 25px rgba(255, 150, 200, 0.8);
+        backdrop-filter: blur(5px);
+        margin-bottom: 20px;
+    }
+
+    .sticker-box img {
+        border-radius: 20px;
+        box-shadow: 0 0 15px pink;
+    }
+
+    .heart-btn {
+        background: #ff5ca7;
+        color: white;
+        padding: 15px 40px;
+        border-radius: 50px;
+        border: none;
+        font-size: 22px;
+        cursor: pointer;
+        box-shadow: 0 0 12px #ff5ca7;
+    }
+
+    /* SLIDER ANIMATION (PAGE 3) */
+    .slide-plate {
+        width: 80%;
+        background: rgba(255,255,255,0.55);
+        padding: 18px;
+        border-radius: 25px;
+        margin-bottom: 15px;
+        text-align: left;
+        cursor: pointer;
+        box-shadow: 0 0 10px pink;
+        overflow: hidden;
+        position: relative;
+        transition: all 0.4s ease;
+    }
+
+    .slide-text {
+        opacity: 0;
+        transform: translateX(-20px);
+        transition: 0.4s;
+    }
+
+    .slide-plate.open .slide-text {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .slider-btn {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: white;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        box-shadow: 0 0 8px pink;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        transition: 0.4s;
+    }
+
+    .slide-plate.open .slider-btn {
+        transform: translateY(-50%) rotate(90deg);
+        background: #ffb3d9;
+    }
+
+    /* PAGE 4 LABEL */
+    .label-touch {
+        margin-bottom: 10px;
+        font-size: 18px;
+        color: #ff2f8b;
+        font-weight: 600;
+    }
+
+    /* PAGE 4 PULL BOX */
+    .pull-box {
+        width: 85%;
+        height: 90px;
+        overflow: hidden;
+        background: rgba(255,255,255,0.55);
+        border-radius: 25px;
+        padding: 20px;
+        cursor: pointer;
+        transition: height 0.6s ease;
+        box-shadow: 0 0 15px pink;
+        font-family: 'Great Vibes', cursive;
+        font-size: 26px;
+        color: #ff2f8b;
+    }
+
+    .pull-box.open { height: 350px; }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<div class="page active" id="p1">
+    <div class="sticker-box"><img src="https://i.postimg.cc/6q0tYgMv/download.jpg" width="200"></div>
+    <div class="box">
+        Hey cutepie, I love you so much. Please don't be upset or sad from me. You are my everything.
+    </div>
+    <button class="heart-btn" onclick="next(2)">Next ❤️</button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="p2">
+    <div class="sticker-box"><img src="https://i.postimg.cc/sxy3Ps45/div_2.webp" width="200"></div>
+    <div class="box">
+        I am only yours. Don’t be sad, just be mine only mine.
+    </div>
+    <button class="heart-btn" onclick="next(3)">Next ❤️</button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page" id="p3">
+    <h2>Something I want to tell you</h2>
+    <h4>Tap each one</h4>
+
+    <div class="slide-plate" onclick="toggleSlide(this)">
+        <div class="slide-text">I love you unconditionally</div>
+        <div class="slider-btn">→</div>
+    </div>
+
+    <div class="slide-plate" onclick="toggleSlide(this)">
+        <div class="slide-text">Don't be insecure i am totally yours</div>
+        <div class="slider-btn">→</div>
+    </div>
+
+    <div class="slide-plate" onclick="toggleSlide(this)">
+        <div class="slide-text">I will make sure to make you happy with small cute things</div>
+        <div class="slider-btn">→</div>
+    </div>
+
+    <div class="slide-plate" onclick="toggleSlide(this)">
+        <div class="slide-text">I want you that i am so jealous from everyone around you</div>
+        <div class="slider-btn">→</div>
+    </div>
+
+    <button class="heart-btn" onclick="next(4)">Next ❤️</button>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page" id="p4">
+    <h2>From my heart...</h2>
+
+    <!-- SIDE BY SIDE STICKERS -->
+    <div style="display: flex; gap: 15px; justify-content: center; margin-bottom: 20px;">
+        <div class="sticker-box" style="width: 160px;">
+            <img src="https://i.postimg.cc/Vv1z9mWB/div_4_part_1.jpg" width="150">
+        </div>
+
+        <div class="sticker-box" style="width: 160px;">
+            <img src="https://i.postimg.cc/zvj806xy/div_4part_2.jpg" width="150">
+        </div>
+    </div>
+
+    <div class="label-touch">Touch to expand ↓</div>
+
+    <div class="pull-box" onclick="togglePull(this)">
+       Baby I love you so much bina tumhare nahi rhna hai mujhe i love you so much meri jaan always be mine mai sirf teri hu daro mat tumse hi pyar krte hai i really love you so much please baby always be with me tumhe insecure hone ki bhi jarurt nahi hai mat daro i assure you you are only mine and i am only yours mai hamesha tere sath hu i really love you my baby. You are my everything Meri har khushi bas tere pyaar se hai. yaar shi btau tere bina kucha cha nahi lgta khud se bhi chid machne lgti hai lya hi btau kitna ajeeb lgta hai sab tum meri kya ho kya nahi smjhana impossible hai tumhe jitna chahte hai yeh sirf mai feel krva skti hu tujhe or koi kami nahi ayegi tumhari care me trust me i really love you so much tujhse behtar or tujhse pyara na koi hoga na hi chahiye you are my most expensive thing i really want you to keep with me until my last breath i really want you so badly that mai kuch bhi chodne ko tyar hu bs tere se pyar pane ke liye tujhe khush rkhna hai i really love you i just love you so much i love you so much.
+    </div>
+</div>
+
+<script>
+function next(n){
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('p'+n).classList.add('active');
+}
+
+function toggleSlide(el){
+    el.classList.toggle('open');
+}
+
+function togglePull(el){
+    el.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>

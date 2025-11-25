@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Sweetheart 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #ffb6c1, #ff69b4);
+      font-family: "Poppins", sans-serif;
+      overflow: hidden;
+    }
+
+    h1 {
+      color: white;
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    button {
+      background-color: white;
+      color: #ff1493;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #ff69b4;
+      color: white;
+      transform: scale(1.1);
+    }
+
+    .heart {
+      position: relative;
+      width: 100px;
+      height: 90px;
+      background-color: #ff3366;
+      transform: rotate(-45deg);
+      animation: beat 1s infinite;
+      box-shadow: 0 0 40px rgba(255, 0, 76, 0.8);
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 90px;
+      background-color: #ff3366;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -50px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: 50px;
+      top: 0;
+    }
+
+    @keyframes beat {
+      0%, 100% {
+        transform: scale(1) rotate(-45deg);
+      }
+      50% {
+        transform: scale(1.2) rotate(-45deg);
+      }
+    }
+     .container {
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 80px; /* 💖 Increased space between heart and photo */
+  animation: fadeIn 1.5s ease forwards;
+  flex-wrap: wrap;
+  margin-top: 40px; /* added some space above */
+}
+
+
+    .message {
+      text-align: center;
+      font-size: 1.5rem;
+      color: white;
+      margin-top: 30px;
+      animation: fadeIn 2s ease forwards;
+    }
+
+    img {
+      width: 220px;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(255, 105, 180, 0.8);
+      transition: transform 0.6s ease;
+    }
+
+    img:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Click this button for me my sweetheart 💖</h1>
+  <button onclick="showLove()">Click Me 💘</button>
+
+  <div class="container" id="loveScene">
+    <div class="heart"></div>
+    <img src="https://i.postimg.cc/tTd1QxZr/IMG-20250804-WA0037.jpg" alt="Sweetheart Photo">
+  </div>
+
+  <div class="message" id="message"></div>
+
+  <script>
+    function showLove() {
+      document.querySelector("h1").style.display = "none";
+      document.querySelector("button").style.display = "none";
+
+      const loveScene = document.getElementById("loveScene");
+      const message = document.getElementById("message");
+
+      loveScene.style.display = "flex";
+
+      setTimeout(() => {
+        message.textContent = "My heart is beating for you 💞";
+      }, 1500);
+    }
+  </script>
+</body>
+</html>

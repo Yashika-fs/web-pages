@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You, Mom & Dad</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            overflow-x: hidden;
+        }
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            animation: fadeIn 2s ease-in;
+        }
+        h1 {
+            font-size: 3em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .typewriter {
+            font-size: 1.5em;
+            border-right: 2px solid #fff;
+            animation: blink 1s infinite, type 3s steps(40, end);
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes blink { 0%, 50% { border-color: transparent; } }
+        @keyframes type { from { width: 0; } to { width: 100%; } }
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+        section:hover { transform: scale(1.02); }
+        .hidden { display: none; }
+        .visible { display: block; animation: slideIn 1s ease-out; }
+        @keyframes slideIn { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            background: #ff6b6b;
+            color: #fff;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+            margin: 10px;
+        }
+        button:hover { background: #ff5252; transform: scale(1.05); }
+        .quiz {
+            text-align: center;
+        }
+        .quiz button { margin: 5px; }
+        .hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .heart {
+            position: absolute;
+            color: #ff6b6b;
+            font-size: 2em;
+            animation: float 5s linear infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0,0,0,0.2);
+        }
+        .paragraph {
+            font-size: 1.2em;
+            line-height: 1.6;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .bilingual {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+        }
+        .bilingual div {
+            width: 48%;
+            padding: 0 10px;
+        }
+        .responses {
+            margin-top: 20px;
+            font-size: 1.2em;
+            text-align: center;
+        }
+        .thankyou-note {
+            margin-top: 20px;
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #ffeb3b;
+        }
+    </style>
+</head>
+<body>
+    <div class="hearts" id="hearts"></div>
+    <header>
+        <h1>Thank You, Mom & Dad</h1>
+        <p class="typewriter">For everything you've done, I am forever grateful.</p>
+    </header>
+    
+    <section id="reasons">
+        <h2>Why I Thank You</h2>
+        <ul>
+            <li>Your endless love and support.</li>
+            <li>Teaching me values and kindness.</li>
+            <li>Being there through every challenge.</li>
+            <li>Making home the best place in the world.</li>
+        </ul>
+    </section>
+    
+    <!-- Interactive Sequence -->
+    <section id="interactive">
+        <div id="div1" class="visible">
+            <h2>Do You Want to Know Something Special?</h2>
+            <button id="yesBtn">Yes!</button>
+        </div>
+        <div id="div2" class="hidden">
+            <h2>A Beautiful Thank You</h2>
+            <button id="revealBtn2">Click to Reveal the Message</button>
+            <div class="paragraph bilingual" id="para2"></div>
+            <button id="nextBtn" class="hidden">Next Surprise</button>
+        </div>
+        <div id="div3" class="hidden">
+            <h2>Your Love, Care, and Affection</h2>
+            <button id="revealBtn3">Click to Reveal the Message</button>
+            <div class="paragraph bilingual" id="para3"></div>
+            <button id="quizBtn" class="hidden">Take a Quick Quiz</button>
+        </div>
+        <div id="div4" class="hidden quiz">
+            <h2>Did You Like the Surprise?</h2>
+            <p>Answer these fun questions!</p>
+            <div>
+                <p>Did you like my surprise?</p>
+                <button class="yes">Yes! 😊</button>
+                <button class="no">No 😢</button>
+            </div>
+            <div>
+                <p>Do you feel overwhelmed with love?</p>
+                <button class="yes">Yes! ❤️</button>
+                <button class="no">Not really</button>
+            </div>
+            <div class="responses" id="responses"></div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>Made with ❤️ for the best parents ever.</p>
+    </footer>
+    
+    <script>
+        // Floating hearts animation
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDelay = Math.random() * 5 + 's';
+            document.getElementById('hearts').appendChild(heart);
+            setTimeout(() => heart.remove(), 5000);
+        }
+        setInterval(createHeart, 1000);
+        
+        // Paragraph content stored in JS (not in HTML)
+        const para2Content = {
+            english: "You are the best parents anyone could ask for. You have always supported me in every way, from my smallest dreams to my biggest challenges. Your love and guidance have shaped me into who I am today. Thank you for being my rock and my biggest cheerleaders.",
+            hindi: "आप सबसे अच्छे माता-पिता हैं जिन्हें कोई भी माँग सकता है। आपने हमेशा हर तरह से मेरा साथ दिया है, मेरे छोटे सपनों से लेकर मेरी बड़ी चुनौतियों तक। आपका प्यार और मार्गदर्शन ने मुझे आज जो मैं हूँ, उसमें ढाला है। मेरे रॉक और मेरे सबसे बड़े चीयरलीडर होने के लिए धन्यवाद।"
+        };
+        
+        const para3Content = {
+            english: "Your love is like a warm hug that never fades. You care for me with a heart full of kindness, always putting my happiness first. Your affection has been my greatest treasure, teaching me what true family means. I am so lucky to have you as my parents.",
+            hindi: "आपका प्यार एक गर्म आलिंगन की तरह है जो कभी फीका नहीं पड़ता। आप दयालुता से भरे दिल से मेरी देखभाल करते हैं, हमेशा मेरी खुशी को पहले रखते हैं। आपका स्नेह मेरा सबसे बड़ा खजाना रहा है, जिसने मुझे सच्ची परिवार की क्या बात है, सिखाया है। मुझे आप जैसे माता-पिता मिलना बहुत भाग्य की बात है।"
+        };
+        
+        // Interactive sequence
+        document.getElementById('yesBtn').addEventListener('click', () => {
+            document.getElementById('div1').classList.remove('visible');
+            document.getElementById('div1').classList.add('hidden');
+            document.getElementById('div2').classList.remove('hidden');
+            document.getElementById('div2').classList.add('visible');
+        });
+        
+        document.getElementById('revealBtn2').addEventListener('click', () => {
+            const paraDiv = document.getElementById('para2');
+            paraDiv.innerHTML = `
+                <div><p>${para2Content.english}</p></div>
+                <div><p>${para2Content.hindi}</p></div>
+            `;
+            paraDiv.style.display = 'flex';
+            document.getElementById('nextBtn').classList.remove('hidden');
+            document.getElementById('nextBtn').classList.add('visible');
+        });
+        
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            document.getElementById('div2').classList.remove('visible');
+            document.getElementById('div2').classList.add('hidden');
+            document.getElementById('div3').classList.remove('hidden');
+            document.getElementById('div3').classList.add('visible');
+        });
+        
+        document.getElementById('revealBtn3').addEventListener('click', () => {
+            const paraDiv = document.getElementById('para3');
+            paraDiv.innerHTML = `
+                <div><p>${para3Content.english}</p></div>
+                <div><p>${para3Content.hindi}</p></div>
+            `;
+            paraDiv.style.display = 'flex';
+            document.getElementById('quizBtn').classList.remove('hidden');
+            document.getElementById('quizBtn').classList.add('visible');
+        });
+        
+        document.getElementById('quizBtn').addEventListener('click', () => {
+            document.getElementById('div3').classList.remove('visible');
+            document.getElementById('div3').classList.add('hidden');
+            document.getElementById('div4').classList.remove('hidden');
+            document.getElementById('div4').classList.add('visible');
+        });
+        
+        // Quiz responses displayed in the last div with thank you note
+        let responses = [];
+        document.querySelectorAll('.yes, .no').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const question = e.target.parentElement.querySelector('p').textContent;
+                const answer = e.target.textContent;
+                responses.push(`${question}: ${answer}`);
+                if (responses.length === 2) {
+                    document.getElementById('responses').innerHTML = '<h3>Your Responses:</h3>' + responses.map(r => `<p>${r}</p>`).join('') + '<div class="thankyou-note">Thank you for taking the quiz! Your feedback means a lot to me. ❤️</div>';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
