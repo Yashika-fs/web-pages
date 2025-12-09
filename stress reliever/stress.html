@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Love for You - Stress Relief Slideshows</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #ffe6f2, #ffb3d9);
+            color: #d63384;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        .slideshow-container {
+            max-width: 800px;
+            margin: 20px auto;
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            background: rgba(255,255,255,0.9);
+            height: 500px; /* Increased height to fit content clearly */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .slide {
+            display: none;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .unique-content {
+            font-size: 3em; /* Adjusted for clarity */
+            margin-bottom: 20px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .heart-draw {
+            width: 150px; /* Smaller for fit */
+            height: 150px;
+            margin: 0 auto;
+            border: 2px solid #ff69b4;
+            border-radius: 50% 50% 0 0;
+            position: relative;
+            animation: drawHeart 3s ease-in-out infinite;
+        }
+        .heart-draw::before {
+            content: '';
+            position: absolute;
+            top: -37px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 75px;
+            height: 112px;
+            background: #ff69b4;
+            border-radius: 37px 37px 0 0;
+            clip-path: polygon(50% 0%, 0% 50%, 100% 50%);
+        }
+        @keyframes drawHeart {
+            0% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1.1); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        .love-poem {
+            font-size: 1.2em; /* Smaller for fit */
+            line-height: 1.4;
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .floating-text {
+            font-size: 2.5em; /* Adjusted */
+            animation: bounce 2s ease-in-out infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .slide .quote {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            background: rgba(255,255,255,0.8);
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 1em; /* Smaller */
+            font-style: italic;
+        }
+        .hearts {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5em; /* Smaller */
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        .kisses {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2em; /* Smaller */
+            animation: kiss 2s ease-in-out infinite;
+        }
+        @keyframes kiss {
+            0%, 100% { opacity: 0; transform: translate(-50%, -50%) scale(1); }
+            50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+        }
+        .nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.7);
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 1.5em;
+        }
+        .prev { left: 10px; }
+        .next { right: 10px; }
+        .send-love {
+            margin-top: 20px;
+            padding: 15px 30px;
+            background: #ff69b4;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.2em;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .send-love:hover {
+            background: #ff1493;
+        }
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        .heart {
+            position: absolute;
+            font-size: 2em;
+            color: #ff69b4;
+            animation: fall 5s linear infinite;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-100vh) rotate(0deg); }
+            100% { transform: translateY(100vh) rotate(360deg); }
+        }
+        /* Additional animations */
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        @keyframes grow { 0% { transform: scale(0.8); } 50% { transform: scale(1.2); } 100% { transform: scale(1); } }
+        @keyframes explode { 0% { transform: scale(1); } 50% { transform: scale(1.2); opacity: 0.7; } 100% { transform: scale(1); opacity: 1; } }
+
+        /* Separator line */
+        .separator {
+            margin: 40px auto;
+            width: 80%;
+            height: 2px;
+            background: linear-gradient(to right, #ff69b4, #ffb3d9, #ff69b4);
+            border-radius: 1px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* Final quote section */
+        .final-quote {
+            margin: 40px auto;
+            max-width: 800px;
+            background: linear-gradient(to bottom, #f5f5dc, #ffe4e1); /* Nude colors: beige and light pink */
+            border: 3px solid #ff69b4;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        .final-quote::before {
+            content: '💖';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 2em;
+            opacity: 0.5;
+        }
+        .final-quote::after {
+            content: '💕';
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 2em;
+            opacity: 0.5;
+        }
+        .final-quote h2 {
+            font-size: 3em;
+            color: #d63384;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        .final-quote p {
+            font-size: 1.5em;
+            color: #8b4513; /* Brownish nude tone */
+            line-height: 1.6;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Dearest Love, You're My Everything 💖</h1>
+    <p>Take a deep breath, relax, and let this slideshow remind you how much you mean to me. I love you endlessly! 😘</p>
+
+    <!-- Single Slideshow Container with 10 Slides -->
+    <div class="slideshow-container">
+        <!-- Slide 1: Animated Heart Drawing -->
+        <div class="slide active">
+            <div class="unique-content">
+                <div class="heart-draw"></div>
+            </div>
+            <div class="quote">"Every moment with you is a treasure. You're my everything."</div>
+            <div class="hearts">❤️</div>
+            <div class="kisses">😘</div>
+        </div>
+
+        <!-- Slide 2: Floating Love Text -->
+        <div class="slide">
+            <div class="unique-content">
+                <div class="floating-text">I Love You 💕</div>
+            </div>
+            <div class="quote">"Your smile lights up my world. I love you more than words can say."</div>
+            <div class="hearts">💕</div>
+            <div class="kisses">😘</div>
+        </div>
+
+        <!-- Slide 3: Pulsing Kiss Emojis -->
+        <div class="slide">
+            <div class="unique-content">
+                😘😘😘
+            </div>
+            <div class="quote">"Breathe in peace, breathe out stress. I'm here to hold you close."</div>
+            <div class="hearts">💖</div>
+            <div class="kisses">😘</div>
+        </div>
+
+        <!-- Slide 4: Cute Emoji Sending Kisses -->
+        <div class="slide">
+            <div class="unique-content">
+                😘💋😘
+            </div>
+            <div class="quote">"Every adventure is better with you by my side. You're my forever."</div>
+            <div class="hearts">❤️</div>
+            <div class="kisses">😘</div>
+        </div>
+
+        <!-- Slide 5: Good Pickup Line -->
+        <div class="slide">
+            <div class="unique-content">
+                Are you a magician? Because whenever I look at you, everyone else disappears! ✨
+            </div>
+            <div class="quote">"In a world full of ordinary, you're my extraordinary. I cherish you."</div>
+            <div class="hearts">💕</div>
+            <div class="kisses">😘</div>
+        </div>
+
+        <!-- Slide 6: Spinning Hearts -->
+        <div class="slide">
+            <div class="unique-content">
+                <div style="animation: spin 2s linear infinite;">❤️💖💕❤️</div>
+            </div>
+            <div class="quote">"You've got this! I'm proud of you and love you unconditionally."</div>
+            <div class="hearts">💖</div>
+            <div class="kisses">😘</div>
+        </div>
+
+        <!-- Slide 7: Growing Love Symbol -->
+        <div class="slide">
+            <div class="unique-content">
+                <div style="font-size: 4em; animation: grow 3s ease-in-out infinite;">♡</div>
+            </div>
+            <div class="quote">"I care for you deeply, in every way. You're safe and loved in my arms."</div>
+            <div class="hearts">❤️</div>
+            <div class="kisses">😘</div>
+        </div>
+
+        <!-- Slide 8: Rainbow Hearts -->
+        <div class="slide">
+            <div class="unique-content">
+  <div style="background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 3em;">❤️❤️❤️</div>
+            </div>
+            <div class="quote">"My affection for you grows stronger every day. You're my heart."</div>
+            <div class="hearts">💕</div>
+            <div class="kisses">😘</div>
+        </div>
+
+        <!-- Slide 9: Typing Love Message -->
+        <div class="slide">
+            <div class="unique-content">
+                <div id="typing9" style="font-size: 1.5em;"></div>
+            </div>
+            <div class="quote">"Dreaming of our future together. You're my everything, always."</div>
+            <div class="hearts">💖</div>
+            <div class="kisses">😘</div>
+        </div>
+
+        <!-- Slide 10: Exploding Hearts -->
+        <div class="slide">
+            <div class="unique-content">
+                <div style="font-size: 3em; animation: explode 2s ease-in-out infinite;">💥❤️💥</div>
+            </div>
+            <div class="quote">"All the best!"</div>
+            <div class="hearts">❤️</div>
+            <div class="kisses">😘</div>
+        </div>
+
+        <button class="nav prev" onclick="changeSlide(-1)">❮</button>
+        <button class="nav next" onclick="changeSlide(1)">❯</button>
+    </div>
+
+    <button class="send-love" onclick="sendLoveAndStartSlideshow()">Send Extra Love 💌</button>
+
+    <!-- Beautiful Separator Line -->
+    <div class="separator"></div>
+
+    <!-- Final Loving Quote Section -->
+    <div class="final-quote">
+        <h2>I Love You 💖</h2>
+        <p>You are so good, my dearest. Your kindness, your smile, your everything makes my world brighter. I cherish every moment with you and look forward to our forever. You're my heart, my soul, my everything. Relax, breathe, and know you're deeply loved. 😘</p>
+    </div>
+
+    <div class="floating-hearts" id="heartsContainer"></div>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        let autoPlayInterval;
+
+        function changeSlide(n) {
+            slideIndex += n;
+            if (slideIndex >= slides.length) slideIndex = 0;
+            if (slideIndex < 0) slideIndex = slides.length - 1;
+            slides.forEach(slide => slide.style.display = 'none');
+            slides[slideIndex].style.display = 'flex';
+        }
+
+        function startAutoPlay() {
+            autoPlayInterval = setInterval(() => {
+                changeSlide(1);
+            }, 5000);
+        }
+
+        // Start auto-play on page load
+        startAutoPlay();
+
+        // Typing effect for Slide 9
+        let text9 = "You are my everything!";
+        let index9 = 0;
+        function typeWriter9() {
+            if (index9 < text9.length) {
+                document.getElementById('typing9').innerHTML += text9.charAt(index9);
+                index9++;
+                setTimeout(typeWriter9, 100);
+            }
+        }
+        typeWriter9();
+
+        function sendLoveAndStartSlideshow() {
+            // Send floating hearts
+            const container = document.getElementById('heartsContainer');
+            for (let i = 0; i < 20; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.textContent = '❤️';
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.animationDelay = Math.random() * 5 + 's';
+                container.appendChild(heart);
+                setTimeout(() => heart.remove(), 5000);
+            }
+
+            // Ensure slideshow is working immediately (restart auto-play if needed)
+            clearInterval(autoPlayInterval);
+            startAutoPlay();
+            changeSlide(1); // Advance to next slide immediately
+        }
+    </script>
+</body>
+</html>
