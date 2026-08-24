@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shades A | Unisex Salon</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header id="header">
+    <nav class="navbar">
+
+        <a href="#home" class="logo">
+            <div class="logo-circle">S</div>
+            <div>
+                <div class="logo-name">Shades A</div>
+                <small>UNISEX SALON</small>
+            </div>
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li>
+                <button class="nav-book" onclick="openBooking()">Book Now</button>
+            </li>
+            <li id="navAccount"></li>
+        </ul>
+
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    </nav>
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <span class="eyebrow">GREATER NOIDA'S BEAUTY DESTINATION</span>
+
+        <h1>
+            Your Look.<br>
+            Your <em>Shades.</em>
+        </h1>
+
+        <p>
+            Premium hair, beauty and grooming services
+            designed to bring out your best look.
+        </p>
+
+        <div class="hero-buttons">
+
+            <button class="primary-btn" onclick="openBooking()">
+                Book Your Visit
+            </button>
+
+            <a href="#services" class="secondary-btn">
+                Explore Services
+            </a>
+
+        </div>
+
+        <div class="hero-rating">
+            <span class="stars">★★★★★</span>
+            <strong>4.7</strong>
+            <span>490+ Google Reviews</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section class="section" id="services">
+
+    <div class="section-heading">
+
+        <span class="eyebrow">WHAT WE OFFER</span>
+
+        <h2>Beauty, Your Way</h2>
+
+        <p>
+            Professional services for every style,
+            occasion and personality.
+        </p>
+
+    </div>
+
+
+    <div class="service-grid">
+
+        <div class="service-card">
+            <div class="service-icon">✂</div>
+            <h3>Haircut & Styling</h3>
+            <p>
+                Modern cuts, styling and personalized
+                hairstyles by experienced professionals.
+            </p>
+            <div class="service-bottom">
+                <span>From ₹299</span>
+                <button onclick="openBooking('Haircut & Styling')">Book →</button>
+            </div>
+        </div>
+
+
+        <div class="service-card">
+            <div class="service-icon">✦</div>
+            <h3>Makeup</h3>
+            <p>
+                Elegant makeup looks for parties,
+                celebrations and special occasions.
+            </p>
+            <div class="service-bottom">
+                <span>From ₹999</span>
+                <button onclick="openBooking('Makeup')">Book →</button>
+            </div>
+        </div>
+
+
+        <div class="service-card">
+            <div class="service-icon">♡</div>
+            <h3>Pedicure</h3>
+            <p>
+                Relaxing treatments designed to refresh
+                and pamper your feet.
+            </p>
+            <div class="service-bottom">
+                <span>From ₹499</span>
+                <button onclick="openBooking('Pedicure')">Book →</button>
+            </div>
+        </div>
+
+
+        <div class="service-card">
+            <div class="service-icon">◇</div>
+            <h3>Grooming</h3>
+            <p>
+                Complete grooming services for men
+                and women tailored to your style.
+            </p>
+            <div class="service-bottom">
+                <span>From ₹399</span>
+                <button onclick="openBooking('Grooming')">Book →</button>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="section about-section" id="about">
+
+    <div class="about-container">
+
+        <div class="about-images">
+
+            <img
+                src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=900&q=85"
+                alt="Salon interior"
+                class="about-main">
+
+            <img
+                src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=600&q=85"
+                alt="Hair styling"
+                class="about-small">
+
+        </div>
+
+
+        <div class="about-text">
+
+            <span class="eyebrow">ABOUT SHADES A</span>
+
+            <h2>
+                Where Style Meets
+                <em>Relaxation.</em>
+            </h2>
+
+            <p>
+                Welcome to Shades A Unisex Salon — a modern
+                beauty destination where professional expertise
+                meets a calm and welcoming atmosphere.
+            </p>
+
+            <p>
+                Whether you're looking for a simple haircut,
+                professional hairstyling, makeup or a relaxing
+                pedicure, our team is here to create a look
+                that feels uniquely yours.
+            </p>
+
+
+            <div class="features">
+
+                <div>
+                    <span>✓</span>
+                    Experienced Staff
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    Premium Services
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    Relaxing Ambience
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    Unisex Services
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= STATS ================= -->
+
+<section class="stats">
+
+    <div class="stat">
+        <strong>490+</strong>
+        <span>Google Reviews</span>
+    </div>
+
+    <div class="stat">
+        <strong>4.7</strong>
+        <span>Average Rating</span>
+    </div>
+
+    <div class="stat">
+        <strong>100%</strong>
+        <span>Style Focused</span>
+    </div>
+
+    <div class="stat">
+        <strong>10+</strong>
+        <span>Beauty Services</span>
+    </div>
+
+</section>
+
+
+<!-- ================= GALLERY ================= -->
+
+<section class="section" id="gallery">
+
+    <div class="section-heading">
+
+        <span class="eyebrow">OUR SPACE</span>
+
+        <h2>A Glimpse of Shades A</h2>
+
+    </div>
+
+
+    <div class="gallery">
+
+        <div class="gallery-item large">
+            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1000&q=85">
+            <div class="gallery-caption">Our Salon</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=700&q=85">
+            <div class="gallery-caption">Relax</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=700&q=85">
+            <div class="gallery-caption">Hair</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?auto=format&fit=crop&w=700&q=85">
+            <div class="gallery-caption">Beauty</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=700&q=85">
+            <div class="gallery-caption">Style</div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= REVIEWS ================= -->
+
+<section class="section reviews-section" id="reviews">
+
+    <div class="section-heading">
+
+        <span class="eyebrow">CLIENT LOVE</span>
+
+        <h2>What Our Clients Say</h2>
+
+        <p>
+            Loved for our service, atmosphere and attention to detail.
+        </p>
+
+    </div>
+
+
+    <div class="review-grid">
+
+        <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p>
+                "Experienced staff and best quality service."
+            </p>
+            <strong>Google Customer</strong>
+            <small>Google Review</small>
+        </div>
+
+
+        <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p>
+                "The salon's atmosphere was relaxing,
+                and I left with a fabulous haircut."
+            </p>
+            <strong>Google Customer</strong>
+            <small>Google Review</small>
+        </div>
+
+
+        <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p>
+                "Good discounts, nice ambience and
+                really friendly service."
+            </p>
+            <strong>Google Customer</strong>
+            <small>Google Review</small>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= BOOKING CTA ================= -->
+
+<section class="booking-banner" id="contact">
+
+    <div>
+
+        <span class="eyebrow">YOUR NEW LOOK AWAITS</span>
+
+        <h2>
+            Ready for a Little
+            <em>Self-Care?</em>
+        </h2>
+
+        <p>
+            Treat yourself to a premium salon experience.
+        </p>
+
+        <button class="light-btn" onclick="openBooking()">
+            Book Appointment
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FAQ ================= -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <span class="eyebrow">QUESTIONS</span>
+
+        <h2>Frequently Asked</h2>
+
+    </div>
+
+
+    <div class="faq">
+
+        <div class="faq-item">
+
+            <div class="faq-question">
+                Do you offer both men's and women's services?
+                <span>+</span>
+            </div>
+
+            <div class="faq-answer">
+                Yes. Shades A is a unisex salon offering hair,
+                beauty, grooming and styling services.
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <div class="faq-question">
+                Do I need an appointment?
+                <span>+</span>
+            </div>
+
+            <div class="faq-answer">
+                Appointments are recommended, especially during
+                weekends and busy hours.
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <div class="faq-question">
+                What services do you offer?
+                <span>+</span>
+            </div>
+
+            <div class="faq-answer">
+                We offer haircuts, hairstyling, makeup,
+                pedicure and grooming services.
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <div class="faq-question">
+                Where are you located?
+                <span>+</span>
+            </div>
+
+            <div class="faq-answer">
+                Amritpuram Market, Jagat Farm,
+                Greater Noida, Uttar Pradesh 201308.
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div>
+
+            <div class="logo footer-logo">
+                <div class="logo-circle">S</div>
+                <div>
+                    <div class="logo-name">Shades A</div>
+                    <small>UNISEX SALON</small>
+                </div>
+            </div>
+
+            <p>
+                Your destination for modern hair,
+                beauty and grooming experiences.
+            </p>
+
+        </div>
+
+
+        <div>
+            <h4>Explore</h4>
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#gallery">Gallery</a>
+        </div>
+
+
+        <div>
+            <h4>Services</h4>
+            <a href="#services">Haircut</a>
+            <a href="#services">Makeup</a>
+            <a href="#services">Pedicure</a>
+            <a href="#services">Grooming</a>
+        </div>
+
+
+        <div>
+            <h4>Visit Us</h4>
+            <p>
+                Amritpuram Market<br>
+                Jagat Farm<br>
+                Greater Noida<br>
+                Uttar Pradesh 201308<br><br>
+                📞 093194 39959
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+        © 2026 Shades A Unisex Salon
+        <span>Designed with ♡</span>
+    </div>
+
+</footer>
+
+
+<!-- ================= FLOATING BOOK ================= -->
+
+<button class="floating-book" onclick="openBooking()">
+    ✦
+</button>
+
+
+<!-- =========================================================
+     LOGIN / REGISTER MODAL
+========================================================= -->
+
+<div class="modal" id="authModal">
+
+    <div class="modal-box auth-box">
+
+        <button class="close-btn" onclick="closeAuth()">×</button>
+
+        <div id="loginForm">
+
+            <span class="eyebrow">WELCOME BACK</span>
+
+            <h2>Login</h2>
+
+            <p class="modal-description">
+                Login to manage your salon appointments.
+            </p>
+
+
+            <label>Email</label>
+            <input type="email" id="loginEmail" placeholder="Enter email">
+
+
+            <label>Password</label>
+            <input type="password" id="loginPassword" placeholder="Enter password">
+
+
+            <button class="primary-btn full" onclick="login()">
+                Login
+            </button>
+
+
+            <p class="switch-text">
+                Don't have an account?
+                <button onclick="showRegister()">Create Account</button>
+            </p>
+
+        </div>
+
+
+        <div id="registerForm" class="hidden">
+
+            <span class="eyebrow">JOIN SHADES A</span>
+
+            <h2>Create Account</h2>
+
+            <p class="modal-description">
+                Create your account to book appointments.
+            </p>
+
+
+            <label>Full Name</label>
+            <input type="text" id="registerName" placeholder="Your name">
+
+
+            <label>Email</label>
+            <input type="email" id="registerEmail" placeholder="Your email">
+
+
+            <label>Phone</label>
+            <input type="tel" id="registerPhone" placeholder="Your phone number">
+
+
+            <label>Password</label>
+            <input type="password" id="registerPassword" placeholder="Create password">
+
+
+            <button class="primary-btn full" onclick="register()">
+                Create Account
+            </button>
+
+
+            <p class="switch-text">
+                Already have an account?
+                <button onclick="showLogin()">Login</button>
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     BOOKING MODAL
+========================================================= -->
+
+<div class="modal" id="bookingModal">
+
+    <div class="modal-box booking-box">
+
+        <button class="close-btn" onclick="closeBooking()">×</button>
+
+        <span class="eyebrow">SHADES A</span>
+
+        <h2>Book Your Visit</h2>
+
+        <p class="modal-description">
+            Choose your service, date and preferred time.
+        </p>
+
+
+        <div class="booking-step">
+
+            <label>1. Select Service</label>
+
+            <select id="bookingService">
+
+                <option value="">Choose a service</option>
+                <option value="Haircut & Styling">Haircut & Styling</option>
+                <option value="Makeup">Makeup</option>
+                <option value="Pedicure">Pedicure</option>
+                <option value="Grooming">Grooming</option>
+
+            </select>
+
+        </div>
+
+
+        <div class="booking-step">
+
+            <label>2. Select Date</label>
+
+            <input type="date" id="bookingDate" onchange="loadSlots()">
+
+        </div>
+
+
+        <div class="booking-step">
+
+            <label>3. Available Time</label>
+
+            <div class="slots" id="slots">
+
+                <p class="slot-message">
+                    Select a date to view available slots.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <button class="primary-btn full" onclick="confirmBooking()">
+            Confirm Appointment
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     DASHBOARD MODAL
+========================================================= -->
+
+<div class="modal" id="dashboardModal">
+
+    <div class="modal-box dashboard-box">
+
+        <button class="close-btn" onclick="closeDashboard()">×</button>
+
+        <span class="eyebrow">MY ACCOUNT</span>
+
+        <h2 id="dashboardGreeting">
+            Hello!
+        </h2>
+
+        <div class="profile-card">
+
+            <div class="profile-icon">
+                👤
+            </div>
+
+            <div>
+                <strong id="profileName"></strong>
+                <span id="profileEmail"></span>
+            </div>
+
+        </div>
+
+
+        <h3 class="dashboard-title">
+            My Appointments
+        </h3>
+
+        <div id="appointmentsList"></div>
+
+
+        <button class="logout-btn" onclick="logout()">
+            Logout
+        </button>
+
+    </div>
+
+</div>
+
+
+<script src="Script.js"></script>
+
+</body>
+</html>
